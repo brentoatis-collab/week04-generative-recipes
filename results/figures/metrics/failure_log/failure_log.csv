@@ -1,0 +1,4 @@
+Run,Failure,Diagnostic Signal,Measured Evidence,Root Cause,Repair,Residual Risk
+F-01,DDPM sampling-step starvation,Energy distance + sample snapshot,ED 0.007867 -> 0.684308; 86.98x increase,Too few ancestral reverse steps,Restore 200-step DDPM sampler,Latency remains high at validated fidelity
+F-02,Operator grid mismatch,Mean relative L2 + prediction plot,Rel L2 0.009777 -> 0.056883; 5.82x increase,Incorrect physical evaluation-grid representation,Restore correct 128-point representation,Production inputs require grid validation
+F-03,DDPM optimizer instability,Loss + L2 gradient norm,"Step 25: loss 34120.80, grad norm 73289.02",Learning rate increased to 0.5,Restore validated learning rate of 0.001,Training requires loss/gradient monitoring
